@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        * 선택자 (selector)
+          1) 특정 html요소를 선택하고자 할 때 사용하는 기능
+          2) 선택자를 통해 요소를 선택하여 "스타일(css)"과 "기능(script)"을 적용시킬 수 있음
+    -->
+    <h1>기본선택자</h1>
+
+    <style>
+        /* 
+            * 태그선택자 : 태그명
+              ㄴ 해당 태그의 요소들 다수 선택됨 
+        */
+        div {
+            color: red;
+        }
+        h1, div { /* ,를 이용해서 여러개 선택 가능 */
+            background: yellow;
+        }
+    </style>
+
+    <div>태그 선택자 테스트1</div>
+    <div>태그 선택자 테스트2</div>
+
+    <!-- 
+        * html요소 전역 속성 : id, class
+          1) id : 특정 요소 하나만을 선택하기 위해 부여하는 속성 (고유한값으로 설정)
+          2) class : 여러 요소를 한꺼번에 선택하기 위해 부여하는 속성 (중복값 작성가능, 여러개 작성가능)
+    -->
+
+    <style>
+        /* 
+            * 아이디선택자 : #아이디명
+              ㄴ id 속성값이 아이디명과 일치하는 요소 하나만 선택
+        */
+        #p1 {
+            color:blue;
+        }
+        #p2 {
+            color:green;
+        }
+        #p1, #p2 {
+            background: pink;
+        }
+    </style>
+
+    <p id="p1">id 선택자 테스트1</p>
+    <p id="p2">id 선택자 테스트2</p>
+
+    <style>
+        /* 
+            * 클래스선택자 : .클래스명
+              ㄴ class속성값이 클래스명과 일치하는 요소 다수 선택
+        */
+        .group1 {
+            color: aquamarine;
+        }
+        .group2 {
+            color: brown;
+        }
+        .group3 {
+            background: lightgray;
+        }
+        li.group3 { /* 태그선택자와 조합해서 제한두기 */
+            font-size: 30px;
+        }
+    </style>
+
+    <ul>
+        <li class="group1">클래스 선택자 테스트1</li>
+        <li class="group1 group3">클래스 선택자 테스트2</li>
+        <li class="group2 group3">클래스 선택자 테스트3</li>
+        <li class="group2">클래스 선택자 테스트4</li>
+    </ul>
+    <pre class="group3">클래스 선택자 테스트5</pre>
+
+
+
+
+
+
+
+
+</body>
+</html>
