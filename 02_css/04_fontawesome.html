@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+    </style>
+</head>
+<body>
+    
+    <!-- 
+        * CDN
+          1) Contents Delivery Network
+          2) URL을 이용해서 외부 자원을 사용할 수 있는 방식 
+
+        * fontawesome
+          1) 무료 아이콘을 제공하는 곳
+          2) 아이콘 사용을 위해 CDN URL이 필요함 
+        
+        * fontawesome 아이콘 사용하기
+          1) https://cdnjs.com 접속
+          2) fontawesome 조회하여 CDN URL 가져오기 (link 또는 @import 사용)
+          3) https://fontawesome.com 접속
+          4) 원하는 아이콘 조회
+          5) 아이콘 태그 <i class=""></i> 가져오기
+    -->
+
+    <p>유저 아이콘 <i class="fa-solid fa-user"></i></p>
+    <p>유저 아이콘 <i class="fa-solid fa-user-astronaut fa-2x"></i></p>
+    <p>유저 아이콘 <i class="fa-solid fa-circle-user fa-3x"></i></p>
+    <p>유저 아이콘 <i class="fa-solid fa-person-dress fa-4x"></i></p>
+    <p>유저 아이콘 <i class="fa-solid fa-person-skiing-nordic fa-5x" style="color:rgb(226, 226, 96)"></i></p>
+
+    <p>
+        <a href="https://github.com"><i class="fa-brands fa-github fa-3x"></i></a>
+    </p>
+
+    <form action="/server/search.do">
+        <input type="text" name="keyword" placeholder="검색어를 입력하시오.">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    
+
+
+</body>
+</html>

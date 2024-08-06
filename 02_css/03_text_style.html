@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Stylish&display=swap" rel="stylesheet">
+    -->
+</head>
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Stylish&display=swap');
+        #p1 {
+            /* 글꼴 */ font-family: '보람체', '궁서체';
+            /* 크기 */ font-size: 32px;  /* 기본값 16px, px|em|% */
+            /* 굵기 */ font-weight: 900; /* 기본값 400, 100(lighter) ~ 900(bolder) */
+            /* 색상 */ color: red;                      /* 색상명 */
+                       color: #ffd8d8;                  /* RGB색상코드, 각 2자리(00~ff) 값을 가짐 */
+                       color: rgb(132, 67, 192);        /* RGB색상함수, 각 자리(0~255) 값을 가짐 */
+                       color: rgba(44, 42, 46, 0.2);  /* alpha : 투명도 지정 (0:투명, 1:불투명) */
+        }
+        #p2 {
+            /* 
+                * 구글 폰트 사용
+                  1) http://fonts.google.com 접속
+                  2) 원하는 폰트 선택
+                  3) 해당 폰트 사용 (아래 둘 중 하나 선택) 
+                     ㄴ <link>
+                     ㄴ @import
+                  4) 스타일 적용
+            */
+            font-family: 'Stylish';
+            font-family: 'Nanum Pen Script';
+            font-size: 32px;
+            /* 속성 */ font-style: italic; /* normal(기본), italic, oblique */
+        }
+        #p3 {
+            /* 자간     */ letter-spacing: -2px;
+            /* 단어간   */ word-spacing: 10px;
+            /* 행높이   */ line-height: 32px;             /* 주로 수직 가운데 정렬을 위해 사용 */
+            /* 줄긋기   */ text-decoration: line-through; /* none(기본값), line-through(취소선), underline(밑줄), overline(윗줄) */
+            /* 들여쓰기 */ text-indent: 20px;
+            /* 대소문자 */ text-transform: capitalize;    /* uppercase, lowercase, capitalize */
+        }
+        #p4 {
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+
+            /* 정렬   */ text-align: center; /* left(기본값), justify(양쪽), right, center */
+            /* 그림자 */ text-shadow: 0px 0px 5px yellowgreen;  /* 가로거리(x) 세로거리(y) [번짐정도] [색상] */
+                         text-shadow: 0px -3px 8px yellow, 0px -5px 8px orange
+                                    , 0px -10px 10px orangered, 0px -15px 15px red;
+        }
+    </style>
+    
+    <p id="p1">글꼴 및 텍스트 Style Test1</p>
+    <p id="p2">글꼴 및 텍스트 Style Test2</p>
+    <p id="p3">글꼴 및 텍스트 Style Test3</p>
+    <p id="p4">글꼴 및 텍스트 Style Test4</p>
+
+
+</body>
+</html>

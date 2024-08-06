@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .wrap1 > * {
+            background: pink;
+        }
+
+        /* 블럭요소는 크기를 지정할 수 있음 */
+        .wrap1 > div {
+            /* 너비 */ width: 100px;
+            /* 높이 */ height: 100px;
+        }
+
+        /* 인라인요소는 크기를 지정할 수 없음 */
+        .wrap1 > span {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <div class="wrap1">
+        <div>블럭요소</div> <br>
+        <span>인라인요소</span>
+    </div>
+
+    <hr>
+
+    <!-- 
+        * 요소 구조
+
+                     외부여백(margin)
+                ┌-----테두리(border)------┐ 
+           외부 | ###내부여백(padding)### | 외부
+           여백 | ### 내용물(content) ### | 여백
+        (margin)| ####################### | (margin)
+                └-------------------------┘
+                    외부여백(margin) 
+
+        한 요소의 전체 크기는
+        border + padding + content 를 합산한 사이즈
+    -->
+    <style>
+        .wrap2 > div {
+            /* width, height는 기본적으로 content영역의 사이즈 */
+            width: 100px;
+            height: 100px;
+        }
+        /* 
+            * 테두리관련 스타일 : border
+              1) 테두리 두께는 기본적으로 box 크기에 영향을 미침
+              2) 주요 스타일 속성
+                 ㄴ border[-위치]-width   : 테두리 두께
+                 ㄴ border[-위치]-style   : 테두리 종류
+                 ㄴ border[-위치]-color   : 테두리 색상
+                 ㄴ border[-상하위치][-좌우위치]-radius : 테두리 모서리
+              3) 단축 스타일 속성
+                 ㄴ border[-위치] : 테두리 두께, 종류, 색상 한꺼번에 지정
+        */
+        .wrap2 > .box1 {
+            border-style: solid;  /* solid, dotted, dashed, double, groove, ridge, inset, outset */
+            border-width: 5px;
+            border-color: gray;
+            border-radius: 30px;
+        }
+    </style>
+
+    <!-- .wrap2>.box${box$}*4 -->
+    <div class="wrap2">
+        <div class="box1">box1</div> <br>
+        <div class="box2">box2</div> <br>
+        <div class="box3">box3</div> <br>
+        <div class="box4">box4</div>
+    </div>
+
+    
+</body>
+</html>
