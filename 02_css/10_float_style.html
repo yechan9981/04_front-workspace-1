@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        /* 
+            * HTML 요소 배치
+              1) 블럭요소   : 기본적으로 위에서 아래로 배치
+              2) 인라인요소 : 기본적으로 왼쪽에서 오른쪽으로 배치
+
+            * float 스타일 속성
+              1) HTML 요소의 기본 배치를 무시하고 배치 가능
+              2) 요소를 띄워서 왼쪽 또는 오른쪽에 배치 가능
+        */
+        .wrap1 {
+            border: 1px solid gray;
+        }
+        .wrap1 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+        .wrap1 > .box1 {
+            background: red;
+            float: right;
+        }
+        .wrap1 > .box2 {
+            background: yellow;
+            float: left;
+        }
+    </style>
+
+    <div class="wrap1">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        이 헌법은 1988년 2월 25일부터 시행한다. 다만, 이 헌법을 시행하기 위하여 필요한 법률의 제정·개정과 이 헌법에 의한 대통령 및 국회의원의 선거 기타 이 헌법시행에 관한 준비는 이 헌법시행 전에 할 수 있다.
+        대통령은 제1항과 제2항의 처분 또는 명령을 한 때에는 지체없이 국회에 보고하여 그 승인을 얻어야 한다. 감사원은 세입·세출의 결산을 매년 검사하여 대통령과 차년도국회에 그 결과를 보고하여야 한다.
+        대통령의 임기연장 또는 중임변경을 위한 헌법개정은 그 헌법개정 제안 당시의 대통령에 대하여는 효력이 없다. 한 회계연도를 넘어 계속하여 지출할 필요가 있을 때에는 정부는 연한을 정하여 계속비로서 국회의 의결을 얻어야 한다.
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap2 {border: 1px solid gray;}
+        .wrap2 > div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid gray;
+        }
+        .wrap2 > .box1 {
+            background: red;
+            float: left;
+        }
+        .wrap2 > .box2 {
+            background: yellow;
+            float: left;
+        }
+        .wrap2 > .box3 {
+            background: green;
+            width: 600px;
+            /* float영역에 벗어나기 위해 clear속성 */
+            clear: both;
+        }
+    </style>
+
+    <div class="wrap2">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+    
+</body>
+</html>
