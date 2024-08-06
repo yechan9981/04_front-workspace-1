@@ -69,6 +69,29 @@
             border-color: gray;
             border-radius: 30px;
         }
+        .wrap2 > .box2 {
+            border: 3px solid pink;
+            border-top: 5px dashed red;
+            border-right: 10px dotted blue;
+            border-bottom: 7px double green;
+            border-top-right-radius: 50px;
+            border-bottom-left-radius: 30px;
+        }
+        .wrap2 > .box3 {
+            border-style: solid dashed;                 /* 상하 좌우 */
+            border-style: solid dashed dotted double;   /* 상 우 하 좌 */
+            border-color: red orange yellow green;
+            border-radius: 30px 10px 20px 40px;   /* 상좌 상우 하우 하좌 */
+        }
+
+        /* 
+            * box에 그림자효과 스타일 : box-shadow
+              ㄴ 가로거리(x) 세로거리(x) 흐림정도 번짐정도 색상  지정
+        */
+        .wrap2 > .box4 {
+            border: 1px solid black;
+            box-shadow: 5px 5px 10px 5px lightgray;
+        }
     </style>
 
     <!-- .wrap2>.box${box$}*4 -->
@@ -78,6 +101,115 @@
         <div class="box3">box3</div> <br>
         <div class="box4">box4</div>
     </div>
+
+    <hr>
+
+    <style>
+        .wrap3 > div {
+            width: 100px;
+            height: 100px;
+            border: 10px solid gray;
+        }
+        /* 
+            * 안쪽 여백 관련 스타일 : padding
+              1) 요소 내부 여백은 기본적을 box 크기에 영향을 미침 
+              2) 주요 스타일 속성
+                 ㄴ padding[-위치] : 안쪽 여백으로 지정할 값
+        */
+        .wrap3 > .box1 {
+            padding-top: 5px;
+            padding-right: 10px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding: 5px 10px 15px 20px;
+            /* 
+            가로길이 = 10(left-border) + 20(left-padding) + 100(width) + 10(right-padding) + 10(right-border) = 150px
+            세로길이 = 10(top-border) + 5(top-padding) + 100(height) + 15(bottom-padding) + 10(bottom-border) = 140px
+            */
+        }
+        .wrap3 > .box2 {
+            padding: 10px 20px; /* 상하 좌우 */
+            /* 
+            가로길이 = 10 + 20 + 100 + 20 + 10 = 160px
+            세로길이 = 10 + 10 + 100 + 10 + 10 = 140px
+            */
+        }
+        .wrap3 > .box3 {
+            padding: 10px; /* 상하좌우 */
+            /* 
+            가로길이 = 10 + 10 + 100 + 10 + 10 = 140px
+            세로길이 = 10 + 10 + 100 + 10 + 10 = 140px
+            */
+        }
+    </style>
+
+    <div class="wrap3">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+
+    <hr>
+
+    <style>
+        /* 
+            * box-sizing 속성
+              ㄴ width, height값이 어느범위까지의 값인지를 지정
+            
+            1. box-sizing: content-box;
+               1) 기본값
+               2) width와 height는 내용물(content)까지의 범위를 의미
+               3) box 크기 = border + padding + width/height
+            
+            2. box-sizing: padding-box;
+               1) width와 height는 내부여백(padding)까지의 범위를 의미
+               2) box 크기 = border + width/height
+
+            3. box-sizing: border-box;  *** 계산이 단순해짐
+               1) width와 height는 테두리(border)까지의 범위를 의미
+               2) box 크기 = width/height
+        */
+        .wrap4 > .box1 {
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            border: 10px solid gray;
+            padding: 10px;
+        }
+    </style>
+
+    <div class="wrap4">
+        <div class="box1">box1</div>
+    </div>
+
+    <hr>
+
+    <style>
+        /* 
+            * 외부 여백 관련 스타일 : margin
+              1) 테두리 바깥쪽 공간을 의미하며 box 사이즈와는 상관없음
+              2) 타 요소간의 간격을 띄우고자할 때 주로 사용
+              3) 주요 스타일 속성
+                 ㄴ margin[-위치] : 외부 여백으로 지정할 값
+        */
+        
+    </style>
+
+    <div class="wrap5">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     
 </body>
