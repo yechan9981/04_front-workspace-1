@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrap * {
+            box-sizing: border-box;
+            border: 1px solid red;
+        }
+        .wrap {
+            width: 100%;
+            max-width: 1300px;
+            margin: auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header{
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-top{
+            height: 80%;
+            display: flex;
+        }
+        .header-logo{
+            width: 20%;
+        }
+        .header-search{
+            width: 60%;
+        }
+        .header-alarm{
+            width: 20%;
+        }
+        .header-nav{
+            height: 20%;
+        }
+
+
+
+        .content{
+            min-height: 500px;
+            display: flex;
+        }
+        .content-news{
+            width: 75%;
+        }
+        .content-side{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-side-myinfo{
+            height: 150px;
+        }
+        .content-side-ad{
+            height: 350px;
+        }
+
+
+
+        .footer{
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-link{
+            height: 20%;
+        }
+        .footer-info{
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+
+        <div class="header">
+            <div class="header-top">
+                <div class="header-logo"></div>
+                <div class="header-search"></div>
+                <div class="header-alarm"></div>
+            </div>
+            <div class="header-nav">
+
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-news">
+
+            </div>
+            <div class="content-side">
+                <div class="content-side-myinfo"></div>
+                <div class="content-side-ad"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-link">
+
+            </div>
+            <div class="footer-info">
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
