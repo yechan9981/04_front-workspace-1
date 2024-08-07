@@ -6,6 +6,9 @@
     <title>Document</title>
 
     <style>
+        header, nav, section, article, aside, footer {
+            display:block;
+        }
         .wrap * {
             box-sizing: border-box;
             border: 1px solid red;
@@ -78,19 +81,42 @@
     </style>
 </head>
 <body>
+
+    <!-- 
+        * 시맨틱태그
+          1) HTML5 부터 제공되는 태그
+          2) div태그 같이 블럭요소로 생각하면됨
+             단, 해당 영역내에 어떤 정보가 담겨있는지 보다 쉽게 파악하기위해서
+             의미있는 태그명을 제공함
+             ㄴ 명확한 구분 가능
+             ㄴ 타인이 해석할 때도 동일하게 해석 가능
+          3) 종류
+             ㄴ header  : 가장 위에 나타는 머리말 (로고이미지 등)
+             ㄴ nav     : 목차 형태의 메뉴바
+             ㄴ section : 본문 내용(컨텐츠)를 의미
+             ㄴ article : 따로 분할해서 다른 곳에 쓸수 있는 콘텐츠들을 묶는 태그
+             ㄴ aside   : 본문 외의 내용 / 광고 배너같은 / 링크 모음집
+             ㄴ footer  : 웹 문서의 바닥글 (제작정보, 회사정보, 저작권 등)
+          4) 유의사항
+             ㄴ IE8 이하에서는 인라인요소로 인식함 
+                => 블럭요소로 취급되도록 display:block 처리해야됨
+    -->
+
+
+
     <div class="wrap">
 
-        <div class="header">
+        <header class="header">
             <div class="header-top">
                 <div class="header-logo"></div>
                 <div class="header-search"></div>
                 <div class="header-alarm"></div>
             </div>
-            <div class="header-nav">
+            <nav class="header-nav">
 
-            </div>
-        </div>
-        <div class="content">
+            </nav>
+        </header>
+        <section class="content">
             <div class="content-news">
 
             </div>
@@ -98,15 +124,15 @@
                 <div class="content-side-myinfo"></div>
                 <div class="content-side-ad"></div>
             </div>
-        </div>
-        <div class="footer">
+        </section>
+        <footer class="footer">
             <div class="footer-link">
 
             </div>
             <div class="footer-info">
 
             </div>
-        </div>
+        </footer>
 
     </div>
 </body>
