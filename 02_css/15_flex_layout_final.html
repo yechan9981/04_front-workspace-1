@@ -31,11 +31,33 @@
             height: 80%;
             display: flex;
         }
+        .header-logo img{
+            width: 100px;
+        }
         .header-logo{
             width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .header-search{
             width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search-form {
+            width: 500px;
+            height: 30px;
+            display: flex;
+        }
+        .search-form > input {
+            /* width: 400px; */
+            flex-basis: 400px;
+        }
+        .search-form > button {
+            /* width: 100px; */
+            flex-basis: 100px;
         }
         .header-alarm{
             width: 20%;
@@ -150,10 +172,19 @@
 
         <header class="header">
             <div class="header-top">
-                <div class="header-logo"></div>
-                <div class="header-search"></div>
+                <div class="header-logo">
+                    <a href=""><img src="../assets/image/naver_logo.png"></a>
+                </div>
+                <div class="header-search">
+                    <form action="/server/search.do" class="search-form">
+                        <input type="search" name="keyword">
+                        <button type="submit">검색</button>
+                    </form>
+                </div>
                 <div class="header-alarm"></div>
             </div>
+
+
             <nav class="header-nav">
 
             </nav>
