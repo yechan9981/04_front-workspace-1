@@ -73,7 +73,41 @@
         //fnOutputTest();
     </script>
 
+    <script>
+        /*
+            * JavaScript 입력 방식
+              1. 알람창으로 입력받기
+                 변수 = [window.]confirm(알람창에출력할값);  : 확인/취소 버튼 존재, 확인클릭시 true|취소클릭시 false 반환
+                 변수 = [window.]prompt(알람창에출력할값);   : 텍스트상자와 확인/취소 버튼 존재, 확인클릭시 텍스트상자의 value값|취소클릭시 null 반환
+              2. 화면에 보여지는 텍스트상자로 입력받기
+                 변수 = input요소객체.value;
+              3. 특정요소에 출력되고있는 값 가져오기
+                 변수 = 요소객체.innerHTML|innerText;
+        */
+
+        function fnInputTest1(){
+            var result = confirm("홍길동님이시면 확인 아니면 취소 버튼을 눌러주세요");
+            console.log(result);
+
+            if(result) {
+                console.log("환영합니다.");
+            }else{
+                console.log("저리가세요.");
+            }
+        }
+
+        function fnInputTest2(){
+            var userName = prompt("당신의 이름은 무엇입니까?");
+            var age = prompt("당신의 나이는 몇살입니까?");
+            console.log(userName);
+            console.log(age);       // "20" 숫자만입력된 데이터라해도
+                                    //      텍스트상자에 쓰여진값은 무조건 문자열(string)타입
+        }
+    </script>
+
     <button onclick="fnOutputTest();">출력테스트</button>
+    <button onclick="fnInputTest1();">입력테스트1</button>
+    <button onclick="fnInputTest2();">입력테스트2</button>
 
 
 
