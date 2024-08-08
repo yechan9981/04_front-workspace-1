@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    /*
+      * 조건문 
+        1. if문
+           ㄴ 자바에서의 if문 작성법과 동일
+           ㄴ else if로 여러 조건 제시 가능
+           ㄴ else로 모든 조건의 결과가 false일 경우 실행내용 작성가능
+        2. switch문 
+           ㄴ 자바에서의 switch문 작성법과 동일
+           ㄴ 단, 추가로 switch문 비교대상자를 true 작성시
+              case문에 조건식을 작성할 수 있음 
+    */
+    function fnIfTest(){
+      // 나이에 따른 구분 
+      let age = prompt("나이 입력");    // "25" | "" | null
+      let result;
+
+      if(!age){ // age가 존재하지 않을 경우 "" | null
+        result = "나이를 입력하지 않았습니다.";
+      }else{
+        // 문자열내에 숫자만 존재시 숫자간의 대소비교 가능
+        /*
+        if(age < 0 || age > 120){ 
+          result = "잘못된 나이";
+        }else if(age <= 7){
+          result = "미취학 아동";
+        }else if(age <= 13){
+          result = "초등학생";
+        }else if(age <= 19){
+          result = "청소년";
+        }else{
+          result = "성인";
+        }
+        */
+
+        if(age < 0 || age > 120) result = "잘못된 나이";
+        else if(age <= 7)        result = "미취학 아동";
+        else if(age <= 13)       result = "초등학생";
+        else if(age <= 19)       result = "청소년";
+        else                     result = "성인";
+        
+      }
+
+      console.log("age:", age);
+      console.log("result:", result);
+
+    }
+
+    function fnSwitchTest1(){
+      let fruit = prompt("과일 입력");
+      let price;
+
+      switch(fruit){
+        case '바나나' : price = 2000; break;
+        case '사과'   : price = 4000; break;
+        case '키위'   : price = 9000; break;
+      }
+      // 일치하는 값이 없을 경우 price는 undefined 상태
+
+      console.log('fruit:', fruit);
+      price && console.log('price:', price + '원');
+
+    }
+
+    function fnSwitchTest2(){
+      let score = prompt('점수 입력');
+      let grade;
+
+      switch(true){
+        case score >= 90 : grade = 'A'; break;
+        case score >= 80 : grade = 'B'; break;
+        case score >= 70 : grade = 'C'; break;
+        case score >= 60 : grade = 'D'; break;
+        default : grade = 'F';
+      }
+
+      console.log('점수는 ' + score + "점이고, 등급은 " + grade + "등급입니다.");
+    }
+
+  </script>
+
+  <button onclick="fnIfTest();">if테스트</button>
+  <button onclick="fnSwitchTest1();">switch테스트1</button>
+  <button onclick="fnSwitchTest2();">switch테스트2</button>
+
+  <hr>
+
+  <script>
+    /*
+      * 반복문
+        1. while문
+           ㄴ 자바에서의 while문 작성법과 동일
+        2. for문
+           ㄴ 자바에서의 for문 작성법과 동일
+           ㄴ 초기식 작성시 습관처럼 int 작성하면 안됨 
+              var나 let을 통해 초기식 작성
+    */
+    function fnWhileTest(){
+      // 0 ~ 9 까지 1씩 증가되는 값 출력
+      let i = 0;
+      while(i < 10) {
+        console.log(i++);
+      }
+    }
+
+    function fnForTest(){
+
+      for(let i="0"; i<10; i++){ // 초기값을 문자열로 해도 i++에 의해서 숫자로 변경됨
+        console.log(i, typeof i);
+      }
+
+      //console.log(i);
+    }
+
+    // 화면상에 출력하고자 하는 반복적인 요소를 동적으로 생성
+    function fnMakeElement1(){
+      /*
+        <h1>안녕하세요1</h1>
+        <h2>안녕하세요2</h2>
+        <h3>안녕하세요3</h3>
+        <h4>안녕하세요4</h4>
+        <h5>안녕하세요5</h5>
+        <h6>안녕하세요6</h6>
+      */
+
+      let headingEl = "";
+      for(let i=1; i<=6; i++){
+        headingEl += "<h" + i + ">안녕하세요" + i + "</h" + i + ">";
+      }
+      console.log(headingEl);
+
+      document.write(headingEl);
+    }
+
+    function fnMakeElement2(){
+      /*
+        <div>
+          <img src="../assets/image/flower1.jpg" width="100px">
+          <img src="../assets/image/flower2.jpg" width="100px"> 
+          <img src="../assets/image/flower3.jpg" width="100px"> 
+          <img src="../assets/image/flower4.jpg" width="100px"> 
+          <img src="../assets/image/flower5.jpg" width="100px"> 
+        </div>
+      */
+      let imgEl = "<div>"; 
+      for(let i=1; i<=5; i++){
+        imgEl += '<img src="../assets/image/flower' + i + '.jpg" width="100px">';
+      }
+      imgEl += "</div>";
+
+      document.write(imgEl);
+
+    }
+  </script>
+
+  <button onclick="fnWhileTest();">while테스트</button>
+  <button onclick="fnForTest();">for테스트</button>
+
+  <hr>
+
+  <button onclick="fnMakeElement1();">heading요소 동적으로 만들기</button>
+  <button onclick="fnMakeElement2();">img요소 동적으로 만들기</button>
+  
+</body>
+</html>
