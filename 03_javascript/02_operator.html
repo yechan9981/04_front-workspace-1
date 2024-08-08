@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      1. 산술 연산자
+         1) 더하기 : +      5 + 2 == 7
+         2) 빼기   : -      5 - 2 == 3
+         3) 곱하기 : *      5 * 2 == 10
+         4) 나누기 : /      5 / 2 == 2.5
+         5) 나머지 : %      5 % 2 == 1
+         6) 제곱   : **     5 ** 2 == 25
+
+      2. 증감 연산자
+         1) 증가 : ++
+         2) 감소 : --
+
+      3. 대입 연산자 / 복합 대입 연산자
+         1) 대입      : =
+         2) 복합 대입 : +=, -=, *=, **=, /=, %=
+
+      4. 비교 연산자
+         1) greater than          : >
+            greater than equal    : >=
+         2) less than             : <
+            less than equal       : <=
+         3) equal value           : ==      1 == '1'  결과는 true
+            equal value, type     : ===     1 === '1' 결과는 false
+         4) not equal value       : !=
+            not equal value, type : !==
+
+      5. 논리 연산자
+         1) 논리 AND : &&   (short circuit 지원)
+         2) 논리 OR  : ||   (short circuit 지원)
+         3) 논리 NOT : !
+
+      6. 조건 연산자 (삼항 연산자)
+         조건식 ? true일 때 반환값 : false일 때 반환값
+
+      7. 문자열 연결 연산자
+         +, +=
+    */
+
+    function fnOperationTest() {
+
+      console.log(2 ** 3);    // 2의 3제곱 == 8
+      console.log(5 / 2);
+      console.log(10 / 3);
+
+      console.log("=======");
+
+      console.log(1 == 1);
+      console.log(1 == '1');    // 값만 비교 true
+      console.log(1 === '1');   // 값과 타입 비교 false
+
+      console.log("=======");
+
+      // false는 0 / true는 1로 간주
+      console.log(0 == false);
+      console.log(1 == true);
+      console.log(1 + false); // 1
+      console.log(1 + true);  // 2
+
+      console.log("=======");
+
+      // 데이터가 존재할 경우 true로 간주 (1, 1.5, 'hello' 등등)
+      // 데이터가 존재하지 않을 경우 false로 간주 (0, 0.0, '', undefined, null 등)
+
+      let a;
+      let b = 0;
+      let c = '';
+      console.log(!a); // a는 false로 간주
+      console.log(!b); // b는 false로 간주
+      console.log(!c); // c는 false로 간주
+
+      let d = 'hello';
+      let e = 10;
+      console.log(!d); // d는 true로 간주
+      console.log(!e); // e는 true로 간주
+
+      if(d){ // d가 존재할 경우
+        console.log('goodbye');
+      }
+
+      console.log("=======");
+
+      /*
+        * short circuit 활용
+          1) 조건 && 참일경우실행내용;    => if(조건) {실행내용} 과 동일
+             조건 || 거짓일경우실행내용;  => if(!조건){실행내용} 과 동일
+          2) 변수 = 대입할값 || 기본값;   => 대입할 값이 존재하지 않을 경우 기본값이 반환되어 대입
+      */
+
+      /*
+      if(1==1) {
+        console.log("참입니다.");
+      }
+      */
+      1 == 1    && console.log("타입과 값이 모두 일치합니다.");
+      1 === '1' || console.log("타입과 값이 모두 일치해야됩니다.");
+
+      let name = prompt('이름을 입력해주세요') || '없음';
+      console.log(name);
+    }
+  </script>
+
+  <button onclick="fnOperationTest();">연산자 확인</button>
+
+
+
+
+</body>
+</html>

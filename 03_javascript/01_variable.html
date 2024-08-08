@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+            * JavaScript 타입(자료형)
+              1) string
+                 ㄴ 단일 문자와 문자열의 구분이 없음
+                 ㄴ 작은따옴표('')와 큰따옴표("") 모두 사용가능
+              2) number
+                 ㄴ 정수와 실수 구분이 없음 (123과 123.0은 같은 타입)
+                 ㄴ 추가로 NaN(Not a Number), Infinity(무한대), -Infinity 가 존재함
+              3) boolean
+                 ㄴ true / false 값을 가짐
+              4) object
+                 ㄴ 객체자료형으로 메소드(method)와 속성(property)을 가지는 데이터
+                 ㄴ 배열, {}, 요소 등의 타입이 모두 object
+              5) function 
+                 ㄴ 함수 자료형
+              6) undefined
+                 ㄴ 선언 후 값을 할당하지 않은 변수 (즉, 초기화가 되어있지 않은 변수)
+                 ㄴ 또는 값이 전달되지 않은 매개변수 
+
+            * JavaScript 타입 특징
+              1) 동적 타입 (dynamic type) : 변수선언시 자료형을 지정하지 않고 
+                                            대입되는 값에 맞춰 자동으로 타입이 지정됨
+              2) 약 타입 (weak type)      : 일치하지 않는 타입의 값이 대입될 경우 
+                                            타입이 자동으로 변경됨 
+              3) primitive(method와 property가 없는 데이터) 값이 마치 메소드와 속성이 있는것처럼 동작됨
+                 ㄴ 'hello'.length      (정상수행)
+                 ㄴ 'hello'.charAt(0)   (정상수행)
+                 why? : 자동으로 string타입의 primitive값이 String객체로 변환되어 동작됨
+
+        */    
+
+        var name = '홍길동';
+        var age = 10;
+        var flag = true;
+        var obj1 = [10, 20];
+        var obj2 = {name:"김말똥", grade:3};
+        var fn = function() {
+            alert("안녕");
+        };
+        var nodata;
+
+        // * typeof 변수명 : 해당 변수의 타입
+        console.log(name, typeof name);
+        console.log(age, typeof(age));
+        console.log(flag, typeof flag);
+        console.log(obj1, typeof obj1);
+        console.log(obj2, typeof obj2);
+        console.log(fn, typeof fn);
+        console.log(nodata, typeof nodata);
+
+        console.log(nodata+1, typeof(nodata+1)); // NaN, number
+
+        age = "10살";
+        console.log(age, typeof age);
+
+        console.log("====================")
+
+    </script>
+
+    <script>
+        /*
+            * JavaScript 변수 선언 방법
+              1. 총 3가지의 키워드 존재
+              2. 종류와 특징
+                         |   스코프    | 재선언 |   할당전    | 재할당 |   용도
+                ---------|-------------|--------|-------------|--------|----------
+                1) var   | 함수 스코프 |  가능  |  undefined  |  가능  | 함수 변수
+                2) let   | 블럭 스코프 | 불가능 |  undefined  |  가능  | 지역 변수
+                3) const | 블럭 스코프 | 불가능 | 사용 불가능 | 불가능 |   상수
+        */
+
+        function fnVarTest() {
+            var userId;         // > 할당전 : undefined  (초기화없이 선언만 가능)
+            var userId;         // > 재선언 : 가능 
+            console.log(userId, typeof userId);
+            userId = 'user01';
+            console.log(userId, typeof userId);
+            userId = 10001;     // > 재할당 : 가능
+            console.log(userId, typeof userId);
+
+            if(true){
+                var userPwd = 'pass01';
+            }
+            console.log(userPwd, typeof userPwd);
+            // > 스코프 : 함수 스코프 (선언된 함수 내에서 다 사용 가능)
+
+            // var는 자유롭게 변수선언 및 사용할 수 있다는 장점이있지만
+            // 중복된 변수가 남발할 수 있고 의도치않게 값이 변질될 수 있음 
+            // => 보안되서 나온게 let, const (권장사항)
+        }
+        fnVarTest();
+        console.log("====================");
+
+        function fnLetTest() {
+            let userName;       // > 할당전 : undefined (초기화없이 선언만 가능)
+            // let userName;    // > 재선언 : 불가능
+            console.log(userName, typeof userName);
+            userName = '홍길동';
+            console.log(userName, typeof userName);
+            userName = '고길동'; // > 재할당 : 가능
+            console.log(userName, typeof userName);
+
+            if(true) {
+                let userAge = 20;
+            }
+            // console.log(userAge, typeof userAge);
+            // > 스코프 : 블럭 스코프 (선언된 블럭 안에서만 사용 가능)
+        }   
+        fnLetTest();
+        console.log("====================");
+
+        function fnConstTest() {
+            // const hobby;         // > 할당전 : 사용불가 (초기화를 반드시 해야됨)
+            const hobby = "요리";
+            // const hobby = "등산";// > 재선언 : 불가능
+            console.log(hobby, typeof hobby);
+            // hobby = "등산";      // > 재할당 : 불가능
+
+            if(true){
+                const dream = "요리사";
+            }
+            // console.log(dream, typeof dream);
+            // > 스코프 : 블럭 스코프 
+        }
+        fnConstTest();
+        console.log("====================");
+
+    </script>
+
+    <script>
+        /*
+            * 전역변수 
+              ㄴ 함수 밖에 선언된 변수 
+              ㄴ 전역(현재 html내의 script영역 전체)에서 해당 변수를 사용할 수 있음
+              ㄴ window 객체의 속성(property)으로 추가되어있음
+            * 지역변수 
+              ㄴ 특정 영역(함수, 블럭 등)에 선언된 변수
+              ㄴ 선언된 영역에서만 사용할 수 있음 
+        */
+
+        // 전역변수들
+        console.log(name);
+        console.log(age);
+        console.log(obj1);
+
+        console.log(window);
+        console.log(/*window.*/name);
+        console.log(/*window.*/age);
+
+        // 지역변수들 
+        // console.log(userId);
+        // console.log(userName);
+
+        console.log("====================");
+    </script>
+
+    <script>
+        /*
+            * 호이스팅 (hoisting)
+              1. 끌어올린다라고 표현함
+              2. JavaScript 인터프리터가 해당 코드를 실행하기 전에 
+                 var로 선언된 변수나 선언적함수 등을 해당 범위의 맨위로 끌어올려주는 현상
+              3. 예시
+                 1) 특정 범위내에서 변수가 선언된 줄 이전에 해당 변수값을 사용 및 참조할 수 있음 
+                 2) 함수가 선언된 줄 이전에 해당 함수를 호출 할 수 있음 
+                 3) 변수 선언과 동시에 초기화 하는 구문은 
+                    실제로는 변수선언문만 따로 분리해서 먼저 처리됨
+        */
+                         //         실행순서    값
+        console.log(x);  //             2    undefined
+        var x;           //             1
+        x = 10;          //             3
+        console.log(x);  //             4       10
+                         // ------------------------------
+        console.log(y);  //             2    undefined
+        var y = 20;      // var y;      1
+                         // y =20;      3
+        console.log(y);  //             4       20
+
+        /*
+            * 위의 7줄이 내부적으로 
+              var x;
+              var y;
+              console.log(x);
+              x = 10;
+              console.log(x);
+              console.log(y);
+              y = 20;
+              console.log(y);
+        */
+
+        fnTest();              //      2
+        function fnTest() {    //      1
+            console.log("함수 호이스팅");
+        }
+
+
+    </script>
+
+
+
+
+    
+</body>
+</html>
