@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .box1 {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+        .box1:hover {
+            width: 300px;
+            background: red;
+        }
+        /* 
+            * transition 
+              ㄴ 이행(움직임 과정) 스타일 속성
+
+              1) transition-property        : 이행 과정을 볼 CSS속성을 지정
+              2) transition-duration        : 이행 시간을 지정 (3s == 3초)
+              3) transition-timing-function : 이행 과정이 동작하는 방식을 지정
+        */
+        .box1 {
+            transition-property: width, background;
+            transition-duration: 3s;
+            transition-timing-function: ease-in; /* ease,linear,ease-in,ease-out */
+        }
+    </style>
+
+    <div class="box1">box1</div>
+
+    <hr>
+
+    <style>
+        .box2 {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            border: 1px solid gray;
+            border-radius: 100px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 32px;
+            font-weight: 900;
+            cursor: pointer;
+            margin: 100px auto;
+
+            transition-property: transform;
+            transition-duration: 3s;
+        }
+        .box2:active {
+            transform: rotate(3600deg);  /* 360도회전 * 10번 */
+        }
+    </style>
+
+    <div class="box2">회전판</div>
+    
+</body>
+</html>
