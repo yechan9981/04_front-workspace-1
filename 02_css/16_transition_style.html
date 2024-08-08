@@ -60,6 +60,54 @@
     </style>
 
     <div class="box2">회전판</div>
+
+    <hr>
+
+    <style>
+        .img-container {
+            width: 192px;
+            height: 128px;
+            background-image: url('../assets/image/city2.jpg');
+            background-size: 192px;
+        }
+        .screen {
+            width: 192px;
+            height: 128px;
+            background: rgba(255, 0, 0, 0.4);
+            font-size: 32px;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+            line-height: 128px;
+            opacity: 0;         /* 안보이고 있다가 */
+
+            transition-property: opacity, transform;
+            transition-duration: 1s;
+        }
+        .img-container:hover + .screen {
+            opacity: 1;         /* img에 hover시 보여지게 */
+            transform: translateY(-128px); /* 위로 128px 이동하면서 */
+        }
+    </style>
+
+    <div class="img-container"></div>
+    <div class="screen">도쿄타워</div>
+
+    <!-- 
+        * transform 종류
+          ㄴ translateX(이동시킬값)      : 가로축 이동
+          ㄴ translateY(이동시킬값)      : 세로축 이동
+          ㄴ translate(X축이동, Y축이동) : 대각선방향으로 활용
+          ㄴ scaleX(확대시킬배수)        : 가로로 확대 및 축소
+          ㄴ scaleY(확대시킬배수)        : 세로로 확대 및 축소
+          ㄴ scale(X축확대, Y축확대)     : 전체 확대 및 축소
+          ㄴ rotateX(회전각도)           : 가로축기준으로 회전
+          ㄴ rotateY(회전각도)           : 세로축기준으로 회전
+          ㄴ rotate(회전각도)            : 그냥 회전
+          ㄴ skewX(뒤틀각도)             : 가로축으로 뒤틀기
+          ㄴ skewY(뒤틀각도)             : 세로축으로 뒤틀기
+          ㄴ skew(뒤틀각도)              : 전체 뒤틀기
+    -->
     
 </body>
 </html>
